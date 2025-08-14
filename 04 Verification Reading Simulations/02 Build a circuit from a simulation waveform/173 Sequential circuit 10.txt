@@ -1,0 +1,14 @@
+module top_module (
+    input clk,
+    input a,
+    input b,
+    output q,
+    output state  );
+    
+    always @(*) q <= state ^ a ^ b;
+    
+    always @(posedge clk) begin
+        state <= (~q & b) | (~q & a) | (a & b);
+    end
+
+endmodule

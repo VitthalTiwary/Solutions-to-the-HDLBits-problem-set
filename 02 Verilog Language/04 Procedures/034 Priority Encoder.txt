@@ -1,0 +1,18 @@
+// synthesis verilog_input_version verilog_2001
+module top_module (
+    input [3:0] in,
+    output reg [1:0] pos  );
+    
+    wire a, b, c, d;
+    
+    assign d = in[0];
+    assign c = in[1];
+    assign b = in[2];
+    assign a = in[3];
+    
+    always @(*) begin
+    	pos[0] = ((c & ~d) | (a & ~b & ~d));
+        pos[1] = ((b | a) & ~c & ~d);
+    end
+
+endmodule

@@ -1,0 +1,19 @@
+module top_module( 
+    input [399:0] a, b,
+    input cin,
+    output cout,
+    output [399:0] sum );
+
+    wire [100:0] carry; // Carry chain for all 100 BCD adders
+
+    assign carry[0] = cin;  // Initial carry input
+    assign cout = carry[100]; // Final carry output
+
+    genvar i;
+    generate
+        for (i = 0; i < 100; i = i + 1) begin : bcd_add_loop // Add a name to the loop
+            bcd_fadd u_bcd_fadd (a[4 * i + 3 : 4 * i],b[4 * i + 3 : 4 * i],carry[i],carry[i + 1],sum[4 * i + 3 : 4 * i]);
+        end
+    endgenerate
+
+endmodule

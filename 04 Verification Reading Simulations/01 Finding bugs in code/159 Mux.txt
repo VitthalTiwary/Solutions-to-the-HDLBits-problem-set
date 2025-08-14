@@ -1,0 +1,11 @@
+module top_module (
+    input sel,
+    input [7:0] a,
+    input [7:0] b,
+    output [7:0] out  );
+    
+    wire [7:0] s;
+    assign s = {8{sel}};
+    assign out = (s & a) | (~s & b);
+
+endmodule
