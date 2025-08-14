@@ -1,2 +1,2 @@
 # Solutions-to-the-HDLBits-problem-set
-The files contained the compiled solutions of HDLBits problem set with folders. 98% of the solutions are my own with the remaining being made with the help of external sources. I hope you find this repo helpful.
+The files contained the compiled solutions of HDLBits problem set with folders. 98% of the solutions are my own with the remaining being made with the help of external sources. I hope you find this repo helpful. As for my credentials you'll find my name in the rank 1 of HDLBits rankings.
